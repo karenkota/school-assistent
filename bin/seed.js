@@ -3,7 +3,9 @@ const Student = require('../models/Student');
 const Responsible = require('../models/Responsible');
 
 const dbtitle = 'school-assistent';
-mongoose.connect(`mongodb://localhost/${dbtitle}`);
+mongoose.connect(`mongodb://localhost/${dbtitle}`, { useNewUrlParser: true });
+Student.collection.drop();
+Responsible.collection.drop();
 
 const students = [
   {
@@ -13,8 +15,6 @@ const students = [
     password: '1234',
     birthDate: Date('2009-10-18'),
     admissionDate: Date('2011-1-1'),
-    grade: 3,
-    avatarUrl: { type: String, default: 'images/avatar-default.png' },
     contact: {
       name: 'Thomas',
       lastname: 'Pang',
@@ -22,6 +22,7 @@ const students = [
       email: 'thomas.pang@gmail.com',
       phone: 98878687768,
     },
+    grade: 3,
     role: 'Student',
   },
   {
@@ -31,8 +32,6 @@ const students = [
     password: '1234',
     birthDate: Date('2003-02-27'),
     admissionDate: Date('2009-1-1'),
-    grade: 1,
-    avatarUrl: { type: String, default: 'images/avatar-default.png' },
     contact: {
       name: 'Leme',
       lastname: 'Rodrigo',
@@ -40,6 +39,7 @@ const students = [
       email: 'lemerodrigo@ironhack.com.br',
       phone: 1187657654,
     },
+    grade: 1,
     role: 'Student',
   },
   {
@@ -49,8 +49,6 @@ const students = [
     password: '1234',
     birthDate: Date('2002-10-18'),
     admissionDate: Date('2010-1-1'),
-    grade: 2,
-    avatarUrl: { type: String, default: 'images/avatar-default.png' },
     contact: {
       name: 'Gabriel',
       lastname: 'Sicuto',
@@ -58,6 +56,7 @@ const students = [
       email: 'sicutinho@gmail.com',
       phone: 11987343242,
     },
+    grade: 2,
     role: 'Student',
   },
   {
@@ -67,8 +66,6 @@ const students = [
     password: '1234',
     birthDate: Date('2002-05-01'),
     admissionDate: Date('2007-01-01'),
-    grade: 2,
-    avatarUrl: { type: String, default: 'images/avatar-default.png' },
     contact: {
       name: 'Benjamin',
       lastname: 'Clementine',
@@ -76,6 +73,7 @@ const students = [
       email: 'b.clementine@music.com',
       phone: 7656545434,
     },
+    grade: 2,
     role: 'Student',
   },
   {
@@ -85,8 +83,6 @@ const students = [
     password: '1234',
     birthDate: Date('2001-10-18'),
     admissionDate: Date('2007-1-1'),
-    grade: 3,
-    avatarUrl: { type: String, default: 'images/avatar-default.png' },
     contact: {
       name: 'Shakira',
       lastname: 'Ripoll',
@@ -94,9 +90,17 @@ const students = [
       email: 'hipsdontlie@shakira.com',
       phone: 98878687768,
     },
+    grade: 3,
     role: 'Student',
   },
 ];
+
+// Student.create(students, (err) => {
+//   if (err) {
+//     console.log(err);
+//   }
+//   console.log('create');
+// });
 
 const createResponsible = students.map((student) => {
   const newResponsible = new Responsible(student.contact);
@@ -124,17 +128,17 @@ const findResponsibles = Promise.all(createResponsible)
     throw new Error(error)
   });
 
-const saveStudents = findResponsibles.then((findResponsibles) => {
-  return Promise.all(findResponsibles)
-    .then((students) => {
-      return students.map((student) => {
+const saveStudents = findResponsibles.then((res) => {
+  return Promise.all(res)
+    .then((result) => {
+      return result.map((student) => {
         const newStudent = new Student(student);
         return newStudent.save();
       });
     });
 }).then((savedStudents) => {
   Promise.all(savedStudents)
-    .then(students => students.forEach(student => console.log(`created ${student.name} ${student.lastname}`)))
+    .then(result => result.forEach(student => console.log(`created ${student.name} ${student.lastname}`)))
     .then(() => mongoose.connection.close())
     .catch(err => console.log('Error while saving the book: ', err));
 });

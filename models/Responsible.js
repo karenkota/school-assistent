@@ -16,5 +16,5 @@ const responsibleSchema = new Schema({
   },
 });
 
-const Responsible = mongoose.model('Student', responsibleSchema);
+const Responsible = mongoose.model('Responsible', responsibleSchema);
 module.exports = Responsible;
