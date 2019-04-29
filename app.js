@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // HBS - Express View engine setup
 app.set('view engine', 'hbs');
-app.set('views', `${__dirname  }/views`);
+app.set('views', `${__dirname}/views`);
 
 // Routes
 app.get('/', (req, res) => res.render('index'));
