@@ -1,24 +1,26 @@
 // server
-
 const express = require('express');
 const hbs = require('hbs');
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const app = express();
+
+// Static route setup
+app.use(express.static('public'));
+
+// Body Parser Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+
 // HBS - Express View engine setup
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 
-app.get('/', (req, res) => {
-  res.render('index');
-});
-
+// Routes
+app.get('/', (req, res) => res.render('index'));
 app.post('/', (req, res) => {
-  res.redirect('student/rate');
-});
-
-app.get('/student/rate', (req, res) => {
-  res.render('studentsRate');
+  const { user } = req.body;
+  res.render('studentsRate', { user });
 });
 
 app.listen(3000, () => console.log('use port: 3000'));
