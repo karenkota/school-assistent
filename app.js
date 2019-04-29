@@ -1,16 +1,23 @@
-// server 
-const express = require('express');
-const app = express();
-const hbs = require('hbs');
+// server
 
+const express = require('express');
+const hbs = require('hbs');
+const mongoose = require('mongoose');
+
+const app = express();
 // HBS - Express View engine setup
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 
-app.get('/', function(request, response, next) {
-  response.render('index');
+app.get('/', (req, res) => {
+  res.render('index');
 });
-app.post('/', (req, res, next) => {
+
+app.post('/', (req, res) => {
+  res.redirect('student/rate');
+});
+
+app.get('/student/rate', (req, res) => {
   res.render('index');
 });
 
