@@ -18,10 +18,7 @@ app.post('/', (req, res) => {
 });
 
 app.get('/student/rate', (req, res) => {
-  res.render('index');
+  res.render('studentsRate');
 });
-
-// const index = require('./routes/index');
-// app.use('/', index);
 
 app.listen(3000, () => console.log('use port: 3000'));
