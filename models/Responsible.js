@@ -8,8 +8,6 @@ const responsibleSchema = new Schema({
   address: String,
   email: String,
   phone: Number,
-  student: [{ type: Schema.Types.ObjectId, ref: 'Student' }],
-
 },
 {
   timestamps: {
