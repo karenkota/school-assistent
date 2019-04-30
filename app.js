@@ -3,6 +3,7 @@ const express = require('express');
 const hbs = require('hbs');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const session = require('express-session');
 
 mongoose.connect('mongodb://localhost/school-assistent', { useNewUrlParser: true })
   .then(() => {
@@ -25,8 +26,13 @@ app.set('views', `${__dirname}/views`);
 
 // Routes
 app.get('/', (req, res) => res.render('index'));
+app.get('/admin', (req, res) => res.render('admin'));
+
 app.post('/', (req, res) => {
-  const { user } = req.body;
+  const { role } = req.body;
+    role.findOne([{}])
+  }
+  
   res.render('studentsRate', { user });
 });
 
