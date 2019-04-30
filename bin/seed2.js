@@ -1,17 +1,8 @@
 const mongoose = require('mongoose');
-const Principal = require('../models/Principal');
 const Teacher = require('../models/Teacher');
 
 const dbtitle = 'school-assistent';
 mongoose.connect(`mongodb://localhost/${dbtitle}`, { useNewUrlParser: true });
-
-const principal = {
-  name: 'Seymor',
-  lastname: 'Skinner',
-  username: 'skinner',
-  password: 'ihatebart',
-  role: 'Principal',
-};
 
 const teachers = [{
   name: 'Raimundo',
@@ -45,14 +36,6 @@ const teachers = [{
   subject: ['Physical Education'],
   role: 'Teacher',
 }];
-
-
-Principal.create(principal, (err) => {
-  if (err) {
-    console.log(err);
-  }
-  console.log('create');
-});
 
 teachers.map((teacher) => {
   const newTeacher = new Teacher(teacher);
