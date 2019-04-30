@@ -28,10 +28,10 @@ app.set('views', `${__dirname}/views`);
 app.get('/', (req, res) => res.render('index'));
 app.get('/admin', (req, res) => res.render('admin'));
 
-app.post('/', (req, res) => {
-  const { role } = req.body;
-    role.findOne([{}])
-  }
+// app.post('/', (req, res) => {
+//   const { role } = req.body;
+//     role.findOne([{}])
+//   }
   
   res.render('studentsRate', { user });
 });
