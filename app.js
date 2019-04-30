@@ -30,4 +30,6 @@ app.post('/', (req, res) => {
   res.render('studentsRate', { user });
 });
 
+app.get('/students', (req, res, next) => res.render('students'));
+
 app.listen(3000, () => console.log('use port: 3000'));
