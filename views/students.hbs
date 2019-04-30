@@ -1,0 +1,81 @@
+<div id="container">
+  <section id="students-card">
+  {{!-- {{#each}} --}}
+    <div>
+      <a href="/student/{{this._id}}">
+        <h3>{{this.name}}{{this.lastname}}</h3>
+        <div>
+          <figure><img src="{{this.avatarUrl}}" alt="photo {{this.name}}"></figure>
+        </div>
+      </a>
+    </div>
+  {{!-- {{/each}} --}}
+  </section>
+
+  <section id="news">
+    <div>
+      <h2>News Strong Schools</h2>
+      <iframe width="400" height="215" src="https://www.youtube.com/embed/Pg-95ZthZRo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+
+    <div class="menu">
+      <div class="title-menu">
+        <h2>Menu</h2>
+        <h4>May 1st, 2019</h4>
+      </div>
+      <table>
+        <tr>
+          <th> </th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+        </tr>
+        <tr>
+          <td class="hour">09:00</td>
+          <td>break</td>
+          <td>break</td>
+          <td>break</td>
+          <td>break</td>
+          <td>break</td>
+        </tr>
+        <tr>
+          <td class="hour">12:00</td>
+          <td>lunch</td>
+          <td>lunch</td>
+          <td>lunch</td>
+          <td>lunch</td>
+          <td>lunch</td>
+        </tr>
+        <tr>
+          <td class="hour">15:30</td>
+          <td>break</td>
+          <td>break</td>
+          <td>break</td>
+          <td>break</td>
+          <td>break</td>
+        </tr>
+        <tr>
+          <td class="hour">19:00</td>
+          <td>dinner</td>
+          <td>dinner</td>
+          <td>dinner</td>
+          <td>dinner</td>
+          <td>dinner</td>
+        </tr>
+      </table>
+    </div>
+
+
+    <div class="links">
+      <h3>Learn more online</h3>
+        <ul class="online-courses">
+          <li><a href="https://www.udemy.com">Udemy</a></li>
+          <li><a href="https://pt.coursera.org/">Coursera</a></li>
+          <li><a href="https://www.edx.org/">Edx</a></li>
+          <li><a href="https://www.freecodecamp.org/">freecodecamp</a></li>
+        </ul>
+    </div>
+  </section>
+</div>
