@@ -8,7 +8,7 @@ const rateSchema = new Schema({
   student: { type: Schema.Types.ObjectId, ref: 'Student' },
   teacher: { type: Schema.Types.ObjectId, ref: 'Teacher' },
   subjects: { type: Schema.Types.ObjectId, ref: 'Subject' },
-  exam: { type: String, enum: ['1st Exam', '2nd Exam', 'Final Exam'] },
+  exam: { type: String, enum: ['1stexam', '2ndexam', 'finalexam'] },
 });
 
 const Rate = mongoose.model('Rate', rateSchema);

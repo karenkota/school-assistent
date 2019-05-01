@@ -11,8 +11,10 @@ const hbs = require('hbs');
 const Student = require('./models/Student');
 const Teacher = require('./models/Teacher');
 const Subject = require('./models/Subject');
+const Rate = require('./models/Rate');
 
 const { errorMsg } = 'This user or password doesn\'t exist';
+const { successMsg } = 'Rate created';
 
 mongoose.connect('mongodb://localhost/school-assistent', { useNewUrlParser: true })
   .then(() => {
@@ -25,7 +27,7 @@ const app = express();
 
 app.use(session({
   secret: 'school-assistent-auth',
-  cookie: { maxAge: 300000 },
+  cookie: { maxAge: 3000000 },
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
     ttl: 24 * 60 * 60, // 1 day
@@ -55,7 +57,6 @@ app.post('/', (req, res) => {
   if (role === 'Student') {
     Student.findOne({ username })
       .then((student) => {
-        console.log(student.username);
         if (username === student.username && password === student.password) {
           req.session.currentUser = student;
           res.render('students', { student });
@@ -73,7 +74,6 @@ app.post('/', (req, res) => {
             .then((student) => {
               Subject.find()
                 .then((subject) => {
-                  console.log(teacher, student, subject);
                   res.render('createRate', { teacher, student, subject });
                 })
                 .catch((err) => {
@@ -103,8 +103,28 @@ app.use((req, res, next) => {
 });
 
 app.post('/createRate/:teacherId', (req, res, next) => {
-  const teacherId = req.params.teacherId;
-  const student = req.body.students.value;
+  const { teacherId } = req.params;
+  const {
+    student,
+    subject,
+    exam,
+    rate,
+  } = req.body;
+  const rateDb = {
+    rate,
+    student,
+    teacher: teacherId,
+    subjects: subject,
+    exam,
+  };
+  const newRate = new Rate(rateDb);
+  newRate.save()
+    .then(() => {
+      res.render('createRate', { successMsg });
+    })
+    .catch((err) => {
+      console.log('erro ao criar rate no db');
+    });
 });
 
 app.get('/students', () => {
