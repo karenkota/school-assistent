@@ -9,6 +9,10 @@
     <div class="row">
       <div class="col-auth">
         <form action="/student" method="POST">
+          <div class="col-roles">
+            <input type="radio" name="role" value="Student" checked> Student<br>
+            <input type="radio" name="role" value="Teacher"> Teacher<br>
+          </div> 
           <label for="username">
             User:
             <input class="signInput" type="text" name="username" id="username">
@@ -17,19 +21,14 @@
             Password:
             <input type="password" name="password" id="password">
           </label>
-          <div class="col-roles">
-            <input type="radio" name="role" value="Student" checked> Student<br>
-            <input type="radio" name="role" value="Teacher"> Teacher<br>
-          </div>
           <button class="sign-up" type="submit">Sign In</button>
         </form>
       </div>
-
     </div>  
   </div>
 </section>  
 
-<section id="carroussel">
+{{!-- <section id="carroussel">
   <div class="carroussel-img">
     <figure><img src="/images/carroussel.jpg"  alt="school-images"></figure>
   </div>
@@ -42,7 +41,7 @@
   <div class="carroussel-img">
     <figure><img src="/images/carroussel2.jpg" alt="school-images"></figure>
   </div>
-</section>
+</section> --}}
 
 
 

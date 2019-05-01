@@ -1,12 +1,12 @@
 
-// Carroussel
-$('.carroussel').slick({
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 4,
-});
+// // Carroussel
+// $('.carroussel').slick({
+//   dots: true,
+//   infinite: true,
+//   speed: 500,
+//   slidesToShow: 4,
+//   slidesToScroll: 4,
+// });
 
 // dots: Exibe umas bolinhas brancas abaixo dos slides, mostrando quantas opções estão disponíveis. É falso por padrão.
 // infinite: Indica que ao chegar a última opção, retorna ao primeiro item novamente. Também é falso por padrão.

@@ -22,7 +22,7 @@ body{
 }
 #container-main{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .signInput{
   width: 230px;
@@ -33,11 +33,14 @@ body{
 .col-auth {
   text-align: center;
   width: 300px;
-  margin-right: 50px;
+}
+.col-roles {
+  /* text-align: left; */
 }
 .sign-up{
-  margin-top: 60px;
+  margin-top: 30px;
   width: 100px;
+  height: 60px;
   background-color: #F15E46;
   border-radius: 30px;
   padding: 10px;
@@ -45,7 +48,7 @@ body{
   font-weight: bold;
   font-size: 0.5em;
 }
-/* CARROUSSEL-INDEX */
+/* CARROUSSEL-INDEX
 #carroussel{
   background-color:  rgb(248, 191, 3);
   width: 300px;
@@ -62,7 +65,7 @@ body{
 }
 .carroussel-img:target{
   display: block;
-}
+} */
 
 /* STUDENT'S RATES VIEW*/
 #studentsRate{
