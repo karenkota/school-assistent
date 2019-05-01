@@ -1,0 +1,22 @@
+<section id="create-rate">
+  <form action="" method="get">  
+    <div class="dropdown">
+        <select name="students">
+          {{#each student}}
+            <option value="{{student.name}}">{{student.name}}</option>
+          {{/each}}
+        </select>
+        <select name="subject">
+          {{#each subject}}
+            <option value="{{subject.name}}">{{subject.name}}</option>
+          {{/each}}
+        </select>
+         <select name="exam">
+          <option value="1stexam">1st Exam</option>
+          <option value="2ndexam">2nd Exam</option>
+          <option value="finalexam">Final Exam</option>
+        </select>
+        <button class="send-btn" type="submit">send</button>
+      </div>
+  </form>
+</section>

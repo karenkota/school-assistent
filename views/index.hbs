@@ -6,26 +6,28 @@
   </div>
 
   <div id="container-main">
-    <div class="row">
       <div class="col-auth">
         <form action="/student" method="POST">
-          <div class="col-roles">
+          <div class="roles-box">
             <input type="radio" name="role" value="Student" checked> Student<br>
             <input type="radio" name="role" value="Teacher"> Teacher<br>
           </div> 
-          <label for="username">
-            User:
-            <input class="signInput" type="text" name="username" id="username">
-          </label>
-          <label for="password">
-            Password:
-            <input type="password" name="password" id="password">
-          </label>
-          <button class="sign-up" type="submit">Sign In</button>
+          <div class="label-box">
+            <label for="username">
+              User:
+              <input class="signInput" type="text" name="username" id="username">
+            </label>
+            <label for="password">
+              Password:
+              <input type="password" name="password" id="password">
+            </label>
+          </div>
+          <button class="signup-btn" type="submit">Sign In</button>
+          {{#if errorMsg }}
+            <div class="error-message">{{ errorMsg }}</div>
+          {{/if}}
         </form>
-      </div>
     </div>  
-  </div>
 </section>  
 
 {{!-- <section id="carroussel">

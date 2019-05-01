@@ -28,7 +28,8 @@ app.set('views', `${__dirname}/views`);
 app.get('/', (req, res) => res.render('index'));
 
 app.get('/students', (req, res, next) => res.render('students'));
-app.get('/stu-teachers', (req, res, next) => res.render('stu-teachers'));
-
+app.get('/teacher', (req, res, next) => res.render('teacher'));
+app.get('/studentsRate', (req, res, next) => res.render('studentsRate'));
+app.get('/createRate', (req, res, next) => res.render('createRate'));
 
 app.listen(3000, () => console.log('use port: 3000'));
