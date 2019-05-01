@@ -147,11 +147,35 @@ td{
   color: rgb(104, 33, 33);
   text-align: center;
 }
-.send-btn{
-background-color: #F15E46;
-border-radius: 15px;
-padding: 5px;
-font-weight: bold;
-font-size: 0.5em;
-cursor: pointer;
+#create-rate-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#create-rate-form select,
+#create-rate-form input{
+  margin: 10px 0 10px 20px;
+  background-color: #006572;
+  color: #fff;
+  font-size: .5em;
+  height: 35px;
+  width: 200px;
+}
+
+#create-rate-form label{
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+}
+
+#create-rate-form .send-btn{
+  background-color: #F15E46;
+  border-radius: 15px;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 0.5em;
+  cursor: pointer;
+  margin: 20px;
 }

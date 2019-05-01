@@ -10,6 +10,7 @@ const hbs = require('hbs');
 // Models
 const Student = require('./models/Student');
 const Teacher = require('./models/Teacher');
+const Subject = require('./models/Subject');
 
 const { errorMsg } = 'This user or password doesn\'t exist';
 
@@ -68,12 +69,28 @@ app.post('/', (req, res) => {
       .then((teacher) => {
         if (username === teacher.username && password === teacher.password) {
           req.session.currentUser = teacher;
-          res.render('teacher', { teacher });
+          Student.find()
+            .then((student) => {
+              Subject.find()
+                .then((subject) => {
+                  console.log(teacher, student, subject);
+                  res.render('createRate', { teacher, student, subject });
+                })
+                .catch((err) => {
+                  console.log('Subject Coll Error', err);
+                });
+            })
+            .catch((err) => {
+              console.log('Student Coll Error', err);
+            });
         } else {
-          res.render('/', { errorMsg });
+          res.render('index', { errorMsg });
         }
       })
-      .catch(err => console.log(err));
+      .catch((err) => {
+        res.render('index', { errorMsg });
+        console.log(err);
+      });
   }
 });
 
@@ -83,6 +100,11 @@ app.use((req, res, next) => {
   } else {
     res.redirect('/');
   }
+});
+
+app.post('/createRate/:teacherId', (req, res, next) => {
+  const teacherId = req.params.teacherId;
+  const student = req.body.students.value;
 });
 
 app.get('/students', () => {
