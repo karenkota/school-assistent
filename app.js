@@ -120,7 +120,7 @@ app.post('/createRate/:teacherId', (req, res, next) => {
   const newRate = new Rate(rateDb);
   newRate.save()
     .then(() => {
-      res.render('createRate', { successMsg });
+      res.redirect('/createRate', { successMsg });
     })
     .catch((err) => {
       console.log('erro ao criar rate no db');
