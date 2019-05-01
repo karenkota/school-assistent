@@ -51,23 +51,24 @@ app.get('/', (req, res) => res.render('index'));
 
 app.post('/', (req, res) => {
   const { role, username, password } = req.body;
-  if (role === 'student') {
-    Student.find({ username })
+  if (role === 'Student') {
+    Student.findOne({ username })
       .then((student) => {
+        console.log(student.username);
         if (username === student.username && password === student.password) {
           req.session.currentUser = student;
-          res.render('/students', { student });
+          res.render('students', { student });
         } else {
-          res.render('/', { errorMsg });
+          res.render('index', { errorMsg });
         }
       })
       .catch(err => console.log(err));
-  } else if (role === 'teacher') {
-    Teacher.find({ username })
+  } else if (role === 'Teacher') {
+    Teacher.findOne({ username })
       .then((teacher) => {
         if (username === teacher.username && password === teacher.password) {
           req.session.currentUser = teacher;
-          res.render('/teacher', { teacher });
+          res.render('teacher', { teacher });
         } else {
           res.render('/', { errorMsg });
         }
