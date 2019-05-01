@@ -61,7 +61,7 @@ app.post('/', (req, res) => {
           req.session.currentUser = student;
           res.render('students', { student });
         } else {
-          res.render('index', { errorMsg });
+          res.render('/', { errorMsg });
         }
       })
       .catch(err => console.log(err));
