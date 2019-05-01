@@ -30,20 +30,32 @@ app.set('views', `${__dirname}/views`);
 app.get('/', (req, res) => res.render('index'));
 app.get('/admin', (req, res) => res.render('admin'));
 
-app.post('/', (req, res) => {
+app.post('/student', (req, res) => {
   const { username, password, role } = req.body;
-  role.findOne({ username })
-    .then((result) => {
-      if (role === 'Student' && result.username === username && result.password === password) {
-        res.render('studentsRate', { result });
-      } else if (role === 'Teacher' && result.username === username && result.password === password) {
-        res.render('students', { result });
-      } else {
-        console.log('erro no login');
-      }
-    })
-    .catch(err => console.log(err));
+  if (role === 'Student') {
+    Student.findOne({ username })
+      .then((student) => {
+        if (student.username === username && student.password === password) {
+          res.render('studentsRate', { student });
+        }
+      })
+      .catch(err => console.log(err));
+  } else if (role === 'Teacher') {
+    Teacher.findOne({ username })
+      .then((teacher) => {
+        if (teacher.username === username && teacher.password === password) {
+          res.render('students', { teacher });
+        }
+      })
+      .catch(err => console.log(err));
+  }
 });
+
+// else if (role === 'Teacher' && result.username === username && result.password === password) {
+//   res.render('students', { result });
+// } else {
+//   console.log('erro no login');
+// }
 
 app.get('/students', (req, res, next) => res.render('students'));
 
