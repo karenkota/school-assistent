@@ -8,7 +8,7 @@
   <div id="container-main">
     <div class="row">
       <div class="col-auth">
-        <form action="/auth/sign-in" method="POST">
+        <form action="/student" method="POST">
           <label for="username">
             User:
             <input class="signInput" type="text" name="username" id="username">
@@ -17,16 +17,16 @@
             Password:
             <input type="password" name="password" id="password">
           </label>
+          <div class="col-roles">
+            <input type="radio" name="role" value="Student" checked> Student<br>
+            <input type="radio" name="role" value="Teacher"> Teacher<br>
+          </div>
+          <button class="sign-up" type="submit">Sign In</button>
         </form>
       </div>
 
-      <div class="col-roles">
-        <input type="radio" name="role" value="Student" checked> Student<br>
-        <input type="radio" name="role" value="Teacher"> Teacher<br>
-      </div>
     </div>  
   </div>
-  <button class="sign-up" type="submit">Sign In</button>
 </section>  
 
 <section id="carroussel">
