@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Student = require('../models/Student');
 const Teacher = require('../models/Teacher');
+const Subject = require('../models/Subject');
 
 const dbtitle = 'school-assistent';
 mongoose.connect(`mongodb://localhost/${dbtitle}`, { useNewUrlParser: true });
@@ -36,6 +37,18 @@ const teachers = [
   },
 ];
 
+const subjects = [
+  {
+    name: 'Math',
+  },
+  {
+    name: 'Science',
+  },
+  {
+    name: 'Grammar'
+  },
+]
+
 students.map((student) => {
   const newStudent = new Student(student);
   return newStudent.save();
@@ -44,4 +57,9 @@ students.map((student) => {
 teachers.map((teacher) => {
   const newTeacher = new Teacher(teacher);
   return newTeacher.save();
+});
+
+subjects.map((subject) => {
+  const newSubject = new Subject(subject);
+  return newSubject.save();
 });
