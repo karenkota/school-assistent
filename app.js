@@ -37,5 +37,8 @@ app.get('/admin', (req, res) => res.render('admin'));
 // });
 
 app.get('/students', (req, res, next) => res.render('students'));
+app.get('/stu-teachers', (req, res, next) => res.render('students'));
+app.get('/students', (req, res, next) => res.render('students'));
+app.get('/students', (req, res, next) => res.render('students'));
 
 app.listen(3000, () => console.log('use port: 3000'));
