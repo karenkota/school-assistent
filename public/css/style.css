@@ -67,7 +67,100 @@ form{
   padding: 15px 0;
 }
 /* ########################################################### */
-/* STUDENTS VIEW */
+/* PANEL-TEACHER */
+#panel-teacher{
+  height: 100vh;
+  background-color: #7ACDD1;
+}
+.view-rates{
+  background-color: #F15E46;
+  border-radius: 10px;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+  height: 30px;
+  width: 100px;
+}
+.new-rates{
+  background-color: #F15E46;
+  border-radius: 10px;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+  height: 30px;
+  width: 100px;
+}
+/* ########################################################### */
+/* CREATE RATE */
+.design{
+  margin-bottom: 35px;
+}
+.view-btn{
+  margin-left: 20px;
+  background-color: #F15E46;
+  border-radius: 10px;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+  height: 30px;
+}
+.student{
+  text-align: center;
+}
+#create-rate{
+  height: 100vh;
+  background-color: #7ACDD1;
+  font-size: 40px;
+  color: rgb(104, 33, 33);
+  text-align: center;
+}
+#create-rate-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#create-rate-form select,
+#create-rate-form input{
+  font-family: 'Amatic SC', cursive;
+  border-radius: 10px;
+  margin: 10px 0 10px 20px;
+  background-color: #006572;
+  color: #7ACDD1;;
+  font-size: 0.5em;
+  height: 35px;
+  width: 200px;
+}
+#create-rate label{
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+}
+.send-btn{
+  margin-top: 40px;
+  font-family: 'Amatic SC', cursive;
+  width:100px;
+  height: 45px;
+  font-family: 'Amatic SC', cursive;
+  background-color: #F15E46;
+  border-radius: 15px;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 0.5em;
+  cursor: pointer;
+}
+/* ########################################################### */
+ /* TEACHER VIEW */
+ #teacher-aplication{
+  /* height: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#teacher-card{
+  border: 7px solid #F15E46;
+}
+/* ########################################################### */
+/* PANEL STUDENTS */
 .error-message{
   border: 7px solid #F15E46;
   font-family: 'Amatic SC', cursive;
@@ -162,96 +255,3 @@ td{
   color: rgb(104, 33, 33);
   text-align: center;
  }
-/* ########################################################### */
- /* TEACHER VIEW */
-#teacher-aplication{
-  /* height: 100vh; */
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-#teacher-card{
-  border: 7px solid #F15E46;
-}
-/* ########################################################### */
-/* PANEL-TEACHER */
-#panel-teacher{
-  height: 100vh;
-  background-color: #7ACDD1;
-}
-.view-rates{
-  background-color: #F15E46;
-  border-radius: 10px;
-  font-family: 'Amatic SC', cursive;
-  font-weight: bold;
-  height: 30px;
-  width: 100px;
-}
-.new-rates{
-  background-color: #F15E46;
-  border-radius: 10px;
-  font-family: 'Amatic SC', cursive;
-  font-weight: bold;
-  height: 30px;
-  width: 100px;
-}
-/* ########################################################### */
-/* CREATE RATE */
-.design{
-  margin-bottom: 35px;
-}
-.view-btn{
-  margin-left: 20px;
-  background-color: #F15E46;
-  border-radius: 10px;
-  font-family: 'Amatic SC', cursive;
-  font-weight: bold;
-  height: 30px;
-}
-.student{
-  text-align: center;
-}
-#create-rate{
-  height: 100vh;
-  background-color: #7ACDD1;
-  font-size: 40px;
-  color: rgb(104, 33, 33);
-  text-align: center;
-}
-#create-rate-form{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-#create-rate-form select,
-#create-rate-form input{
-  font-family: 'Amatic SC', cursive;
-  border-radius: 10px;
-  margin: 10px 0 10px 20px;
-  background-color: #006572;
-  color: #7ACDD1;;
-  font-size: 0.5em;
-  height: 35px;
-  width: 200px;
-}
-#create-rate label{
-  display: flex;
-  justify-content: space-between;
-  width: 350px;
-}
-.send-btn{
-  margin-top: 40px;
-  font-family: 'Amatic SC', cursive;
-  width:100px;
-  height: 45px;
-  font-family: 'Amatic SC', cursive;
-  background-color: #F15E46;
-  border-radius: 15px;
-  padding: 5px;
-  font-weight: bold;
-  font-size: 0.5em;
-  cursor: pointer;
-}
