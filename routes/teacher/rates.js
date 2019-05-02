@@ -20,7 +20,11 @@ router.get('/rate', (req, res) => {
   Teacher.findById(teacherId)
     .then((teacher) => {
       Rate.find()
+        .populate('student')
+        .populate('teacher')
+        .populate('subjects')
         .then((rates) => {
+          console.log(rates);
           res.render('teacher', { teacher, rates });
         })
         .catch((err) => {
