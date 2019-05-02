@@ -254,7 +254,7 @@ form{
   font-family: 'Amatic SC', cursive;
   border-radius: 20px;
   font-weight: bold;
-  border: 2px solid rgb(104, 33, 33);
+  border: 2px solid rgb(61, 31, 31);
   font-size: 1em;
   cursor: pointer;
 }
@@ -324,11 +324,17 @@ form{
   display: flex;
   flex-wrap: row;
 }
-table{
-  margin: 40px 40px;
+.menu{
+  color: #1C2141;
 }
 td{
   font-size: 1.2em;
+  padding-right: 10px;
+  padding-left: 10px;
+  text-align: center;
+}
+.hour{
+  padding-right: 10px;
 }
 .rates{
   padding: 15px 20px;
@@ -342,13 +348,8 @@ td{
   color: rgb(206, 159, 7);
   border-bottom: 2px solid rgb(248, 191, 3);
 }
-.game{
-  border: 7px solid black;
-  width: 400px;
-  height: 300px;
-}
 #news{
-  border: 7px solid #F15E46;
+  border: 7px solid rgb(248, 191, 3);
   padding: 10px;
   margin: 20px 20px;
 }
@@ -366,20 +367,12 @@ td{
   justify-content: space-between;
   align-content: center;
 }
-.items-menu td{
-  text-align: center;
-  padding: 0 5px;
-}
-.hour{
-  padding-right: 1.5em;
-}
 .menu{
   background-color: #7ACDD1;
-  border-bottom: 7px solid #F15E46;
-  border-top: 7px solid #F15E46;
-  padding-top: 40px;
   display: flex;
   align-content: center;
+  justify-content: space-evenly;
+  font-size: 1.2em;
 }
 .activites{
   margin: 20px 40px;
@@ -389,13 +382,15 @@ td{
   align-content: center;
 }
 .courses{
-  font-size: 1em;  
-  padding: 30px;
+  font-size: 1.5em;  
+  margin-top: 50px;
+  color: #1C2141;
 }
 .events{
   font-size: 1.5em;  
   color: rgb(104, 33, 33);
   text-align: center;
+  margin-top: 20px;
  }
 /* ########################################################### */
 
