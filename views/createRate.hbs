@@ -1,15 +1,18 @@
+
 {{#if successMsg }}
   <div class="success-message">{{ successMsg }}</div>
 {{/if}}
 <section id="create-rate">
+  <figure class="design"><img src="/images/logoEducation.png"></figure>
   <form action="/teacher/createRate/{{teacher._id}}" method="post" id="create-rate-form">
-    <label for="students">
-      Estudant:
+    <label class="student" for="students">
+      Student:
       <select name="student">
         {{#each student}}
         <option value="{{this._id}}">{{this.name}}</option>
         {{/each}}
       </select>
+      <button class="view-btn">Student</button>
     </label>
     <label for="subject">
       Subject:
