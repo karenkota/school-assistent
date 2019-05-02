@@ -5,13 +5,14 @@
 <section id="create-rate">
   <figure class="design"><img src="/images/logoEducation.png"></figure>
   <form action="/createRate/{{teacher._id}}" method="post" id="create-rate-form">
-    <label for="students">
+    <label class="student" for="students">
       Student:
       <select name="student">
         {{#each student}}
         <option value="{{this._id}}">{{this.name}}</option>
         {{/each}}
       </select>
+      <button class="view-btn">Student</button>
     </label>
     <label for="subject">
       Subject:

@@ -153,4 +153,8 @@ app.get('/logout', (req, res) => {
   });
 });
 
+app.get('/edit-teacher', (req, res) => {
+  res.render('/edit-teacher');
+});
+
 app.listen(3000, () => console.log('use port: 3000'));

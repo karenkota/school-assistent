@@ -102,6 +102,11 @@ td{
   color: rgb(206, 159, 7);
   border-bottom: 2px solid rgb(248, 191, 3);
 }
+.game{
+  border: 7px solid black;
+  width: 400px;
+  height: 300px;
+}
 
 
 #news{
@@ -171,6 +176,18 @@ td{
 /* CREATE RATE */
 .design{
   margin-bottom: 35px;
+}
+.view-btn{
+  margin-left: 20px;
+  background-color: #F15E46;
+  border-radius: 10px;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+  height: 30px;
+}
+.student{
+ 
+  text-align: center;
 }
 #create-rate{
   height: 100vh;
