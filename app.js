@@ -39,6 +39,7 @@ app.use(cookieParser());
 // HBS - Express View engine setup
 app.set('view engine', 'hbs');
 app.set('views', `${__dirname}/views`);
+hbs.registerPartials(__dirname + '/views/partials');
 
 const index = require('./routes/index');
 
@@ -53,9 +54,5 @@ const teacher = require('./routes/teacher/rates');
 app.use('/teacher', teacher);
 
 module.exports = app;
-
-// HBS - Partials
-
-
 
 app.listen(3000, () => console.log('use port: 3000'));
