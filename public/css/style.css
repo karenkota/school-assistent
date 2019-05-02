@@ -228,10 +228,13 @@ form{
   justify-content: center;
 }
 .msg{
- color: #F15E46;
- font-weight: 800;
- font-size: 2.5em;
- letter-spacing: 
+  color: #F15E46;
+  font-weight: 800;
+  font-size: 2.5em;
+  letter-spacing: 10px;
+  border: 2px solid;
+  padding: 0 20px;
+  margin: 20px;
 }
 /* PARTIAL > RATE-CARD */
 #rate-card .rate-card-content {
