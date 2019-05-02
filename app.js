@@ -39,7 +39,7 @@ app.use(cookieParser());
 // HBS - Express View engine setup
 app.set('view engine', 'hbs');
 app.set('views', `${__dirname}/views`);
-hbs.registerPartials(__dirname + '/views/partials');
+hbs.registerPartials(`${__dirname}/views/partials`);
 
 const index = require('./routes/index');
 
