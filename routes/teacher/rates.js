@@ -1,4 +1,8 @@
 const express = require('express');
+// Models
+const Teacher = require('../../models/Teacher');
+const Student = require('../../models/Student');
+const Subject = require('../../models/Subject');
 const Rate = require('../../models/Rate');
 
 const router = express.Router();
@@ -13,6 +17,29 @@ router.use((req, res, next) => {
 
 router.get('/rate', (req, res) => {
   res.send('Rate created');
+});
+
+router.get('/addRate/:teacherId', (req, res) => {
+  const { teacherId } = req.params;
+  Teacher.findById(teacherId)
+    .then((teacher) => {
+      Student.find()
+        .then((student) => {
+          Subject.find()
+            .then((subject) => {
+              res.render('createRate', { teacher, student, subject });
+            })
+            .catch((err) => {
+              throw new Error(err);
+            });
+        })
+        .catch((err) => {
+          throw new Error(err);
+        });
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
 });
 
 router.post('/createRate/:teacherId', (req, res) => {

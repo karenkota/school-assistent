@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
       .then((student) => {
         if (username === student.username && password === student.password) {
           req.session.currentUser = student;
-          res.render('students', { student });
+          res.render('panel-students', { student });
         } else {
           res.render('/', { errorMsg });
         }
@@ -30,19 +30,7 @@ router.post('/', (req, res) => {
       .then((teacher) => {
         if (username === teacher.username && password === teacher.password) {
           req.session.currentUser = teacher;
-          Student.find()
-            .then((student) => {
-              Subject.find()
-                .then((subject) => {
-                  res.render('createRate', { teacher, student, subject });
-                })
-                .catch((err) => {
-                  throw new Error(err);
-                });
-            })
-            .catch((err) => {
-              throw new Error(err);
-            });
+          res.render('panel-teacher', { teacher });
         } else {
           res.render('index', { errorMsg });
         }
