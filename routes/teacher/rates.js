@@ -16,7 +16,20 @@ router.use((req, res, next) => {
 });
 
 router.get('/rate', (req, res) => {
-  res.send('Rate created');
+  const teacherId = req.session.currentUser._id;
+  Teacher.findById(teacherId)
+    .then((teacher) => {
+      Rate.find()
+        .then((rates) => {
+          res.render('teacher', { teacher, rates });
+        })
+        .catch((err) => {
+          throw new Error(err);
+        });
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
 });
 
 router.get('/addRate/:teacherId', (req, res) => {
