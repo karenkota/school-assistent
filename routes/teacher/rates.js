@@ -24,7 +24,6 @@ router.get('/rate', (req, res) => {
         .populate('teacher')
         .populate('subjects')
         .then((rates) => {
-          console.log(rates);
           res.render('teacher', { teacher, rates });
         })
         .catch((err) => {
