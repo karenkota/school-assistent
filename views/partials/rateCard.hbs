@@ -1,15 +1,15 @@
-<section id="rateCard">
+<section id="rate-card">
   {{#if msg}}
   <div class="msg">{{msg}}</div>
 {{/if}}
   <div class="rate">
-    {{this.student.name}}
-    {{this.teacher.name}}
-    {{this.subjects.name}}
-    {{this.exam}}
-    {{this.rate}}
+    <div class="rate-card-content">Student: <span>{{this.student.name}}</span></div>
+    <div class="rate-card-content">Teacher: <span>{{this.teacher.name}}</span></div>
+    <div class="rate-card-content">Subject: <span>{{this.subjects.name}}</span></div>
+    <div class="rate-card-content">Exam: <span>{{this.exam}}</span></div>
+    <div class="rate-card-content">Rate: <span>{{this.rate}}</span></div>
   </div>
-  <div class="btns-rateCard">
+  <div class="btns-rate-card">
     <a href="/teacher/{{this._id}}/edit"><button>Edit Rate</button></a>
   <a href="/teacher/{{this._id}}/delete"><button>Delete Rate</button></a>
   </div>

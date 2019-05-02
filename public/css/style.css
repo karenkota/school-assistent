@@ -215,6 +215,10 @@ form{
 }
 /* ########################################################### */
  /* TEACHER VIEW */
+ #teacher-view{
+   overflow: hidden;
+   height: 100vh;
+ }
  #teacher-aplication{
   /* height: 100vh; */
   width: fit-content;
@@ -224,7 +228,17 @@ form{
   justify-content: center;
 }
 /* PARTIAL > RATE-CARD */
-.btns-rateCard button{
+#rate-card .rate-card-content {
+  margin: 5px;
+  display: block;
+  text-align: center;
+  width: 100%;
+  color: #F15E46;
+}
+#rate-card .rate-card-content span{
+  color: #333;
+}
+.btns-rate-card button{
   margin-top: 2.5px;
   font-family: 'Amatic SC', cursive;
   width:70px;
@@ -243,13 +257,19 @@ form{
   width: 450px;
 }
 .students-rates{
-  background-color: #7ACDD1;
   display: flex;
-  float: right;
   flex-direction: column;
-  width: 450px;
+  align-items: center;
+  float: right;
+  height: 80vh;
+  background-color: #7ACDD1;
+  border: 1px solid #F15E46;
+  width: fit-content;
   text-align: center;
   margin-right: 230px;
+  margin-top: 50px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
  #teacher-aplication .edu-logo img{
   height: 250px;
