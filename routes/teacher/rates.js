@@ -24,7 +24,7 @@ router.get('/rate', (req, res) => {
         .populate('teacher')
         .populate('subjects')
         .then((rates) => {
-          res.render('teacher', { teacher, rates });
+          res.render('teacher', { teacher, rates, msg: req.query.msg });
         })
         .catch((err) => {
           throw new Error(err);
@@ -85,7 +85,7 @@ router.post('/createRate/:teacherId', (req, res) => {
 router.get('/:rateId/delete', (req, res) => {
   Rate.findByIdAndDelete(req.params.rateId)
     .then(() => {
-      res.redirect('/teacher/rate?msg=Rate+Removed');
+      res.redirect('/teacher/rate/?msg=Rate+Removed');
     })
     .catch((err) => {
       throw new Error(err);

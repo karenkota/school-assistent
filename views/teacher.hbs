@@ -5,8 +5,10 @@
         <span>{{teacher.name}}</span>
       </h2>
   </div>     
-  
   <div class="students-rates">
+    {{#if msg}}
+      <div class="msg">{{msg}}</div>
+    {{/if}}
     {{#each rates}}
       {{> rateCard this}}
     {{/each}}

@@ -227,6 +227,12 @@ form{
   float: left;
   justify-content: center;
 }
+.msg{
+ color: #F15E46;
+ font-weight: 800;
+ font-size: 2.5em;
+ letter-spacing: 
+}
 /* PARTIAL > RATE-CARD */
 #rate-card .rate-card-content {
   margin: 5px;
@@ -239,18 +245,21 @@ form{
   color: #333;
 }
 .btns-rate-card button{
-  margin-top: 2.5px;
-  font-family: 'Amatic SC', cursive;
+  margin: 2.5px 10px 20px;
   width:70px;
   height: 30px;
   font-family: 'Amatic SC', cursive;
-  background-color: #F15E46;
   border-radius: 20px;
   font-weight: bold;
   border: 2px solid rgb(104, 33, 33);
   font-size: 1em;
   cursor: pointer;
-  margin-left: 50px;
+}
+.btns-rate-card .edit-rate-btn{
+  background-color: #54b538;
+}
+.btns-rate-card .delete-rate-btn{
+  background-color: #F15E46;
 }
 .rate{ 
   font-size: 1.5em;
