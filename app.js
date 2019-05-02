@@ -48,15 +48,10 @@ const panel = require('./routes/auth/panel');
 
 app.use('/panel', panel);
 
-
 const teacher = require('./routes/teacher/rates');
 
 app.use('/teacher', teacher);
 
 module.exports = app;
-
-app.get('/edit-teacher', (req, res) => {
-  res.render('/edit-teacher');
-});
 
 app.listen(3000, () => console.log('use port: 3000'));

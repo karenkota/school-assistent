@@ -1,15 +1,11 @@
-<section id="teacher-aplication"></section>
+<section id="teacher-aplication">
   <section id="teacher-card">
   {{!-- {{#each}} --}}
     <div>
-      <a href="/teacher/{{this._id}}">
         <h3>{{this.name}}</h3>
-        <h3>{{this.subject}}</h3>
-      </a>
     </div>
   {{!-- {{/each}} --}}
   </section>
-
   <section id="rate">
     <section id="eachStudent">
       <a href="/student/{{this._id}}">
@@ -32,6 +28,8 @@
           <td>2nd rate</td>
           <td>final exams</td>
           <td>rate of year</td>
+          <button class="edit">Edit</button>
+          <button class="delete">Delete</button>
         </tr>
         <tr>
           <td class="subject">Math</td>
@@ -39,6 +37,9 @@
           <td>2nd rate</td>
           <td>final exams</td>
           <td>rate of year</td>
+          <button class="edit">Edit</button>
+          <button class="edit">Edit</button>
+          <button class="delete">Delete</button>
         </tr>
         <tr>
           <td class="subject">Science</td>
@@ -46,6 +47,8 @@
           <td>2nd rate</td>
           <td>final exams</td>
           <td>rate of year</td>
+          <button class="edit">Edit</button>
+          <button class="delete">Delete</button>
         </tr>
       </table>
     </section>  
