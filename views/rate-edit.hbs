@@ -1,17 +1,12 @@
 <section id="Edit-rate">
   <figure class="design"><img src="/images/logoEducation.png"></figure>
   <form action="/teacher/{{rate._id}}/edit" method="post" id="edit-rate-form">
-    <label class="student" for="students">
-      Student:
-      <input type="text" name="student" id="student" value="{{this.student.name}}">
-    </label>
-    <label for="subject">
-      Subject:
-      <input type="text" name="subject" id="subject" value="{{this.subjects.name}}">      
-    </label>
+    <div>Student: <span>{{rate.student.name}}></span></div>
+    <div>Teacher: <span>{{rate.teacher.name}}</span></div>
+    <div>Subject: <span>{{rate.subjects.name}}</span></div>
     <label for="exam">
       Exam:
-      <input type="text" name="exam" id="exam" value="{{this.exam}}">      
+      <input type="text" name="exam" id="exam" value="{{rate.exam}}">
     </label>
     <label for="rate">
       Rate:
