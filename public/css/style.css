@@ -110,6 +110,7 @@ form{
   position: absolute;
   color: rgb(104, 33, 33);
   font-size: 2em;
+  display: flex;
   margin-top: -190px;
   margin-left: 30px;
 }
@@ -215,15 +216,58 @@ form{
  /* TEACHER VIEW */
  #teacher-aplication{
   /* height: 100vh; */
+  width: fit-content;
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
   flex-direction: row;
-  flex-wrap: wrap;
+  float: left;
+  justify-content: center;
 }
-#teacher-card{
-  border: 7px solid #F15E46;
+/* PARTIAL > RATE-CARD */
+.btns-rateCard button{
+  margin-top: 2.5px;
+  font-family: 'Amatic SC', cursive;
+  width:70px;
+  height: 30px;
+  font-family: 'Amatic SC', cursive;
+  background-color: #F15E46;
+  border-radius: 20px;
+  font-weight: bold;
+  border: 2px solid rgb(104, 33, 33);
+  font-size: 1em;
+  cursor: pointer;
+  margin-left: 50px;
 }
+.rate{ 
+  font-size: 1.5em;
+  width: 450px;
+}
+.students-rates{
+  background-color: #7ACDD1;
+  display: flex;
+  float: right;
+  flex-direction: column;
+  width: 450px;
+  text-align: center;
+  margin-right: 230px;
+}
+ #teacher-aplication .edu-logo img{
+  height: 250px;
+  margin-top: 100px;
+  margin-left: 100px;
+ } 
+ #teacher-aplication h2{
+  margin-top: 150px;
+  margin-left: 100px;
+  position: absolute;
+  color: rgb(104, 33, 33);
+  font-size: 2em;
+  /* display: flex; */
+ }
+ #teacher-aplication h2 span{
+  color: rgb(20, 180, 54);
+  font-weight: bold;
+  font-size: 2em;
+ }
 /* ########################################################### */
 /* PANEL STUDENTS */
 .error-message{
@@ -321,7 +365,5 @@ td{
   text-align: center;
  }
 /* ########################################################### */
-/* PARTIAL > RATE-CARD */
- .btns-rateCard{
-   
- }
+
+

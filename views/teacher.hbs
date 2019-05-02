@@ -1,7 +1,11 @@
-<section id="teacher-aplication">
-  <div id="teacher-card">
-    <h3>Hello {{teacher.name}}</h3>
-  </div>
+<section>
+  <div id="teacher-aplication">
+    <figure class="edu-logo"><img src="/images/logoEducation.png"></figure>
+      <h2>Hello 
+        <span>{{teacher.name}}</span>
+      </h2>
+  </div>     
+  
   <div class="students-rates">
     {{#each rates}}
       {{> rateCard this}}
