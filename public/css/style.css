@@ -3,6 +3,20 @@
   padding: 0;
   box-sizing: border-box;
 }
+a{
+  color:inherit;
+  text-decoration: none;
+  cursor:pointer;
+  font-family: 'Amatic SC', cursive;
+  color: rgb(104, 33, 33);
+  text-align: center;
+}
+a:hover{
+  filter: brightness(150%);
+}
+button:hover{
+  filter: brightness(150%);
+}
 #header{
   position: absolute;
   top: 1px;
@@ -92,21 +106,52 @@ form{
   height: 100vh;
   background-color: #7ACDD1;
 }
+#panel-teacher h2{
+  position: absolute;
+  color: rgb(104, 33, 33);
+  font-size: 2em;
+  margin-top: -190px;
+  margin-left: 30px;
+}
+#panel-teacher h2 span{
+  color: rgb(20, 180, 54);
+  font-weight: bold;
+  font-size: 2em;
+}
+.edu-logo{
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+}
 .view-rates{
   background-color: #F15E46;
-  border-radius: 10px;
+  border-radius: 30px;
   font-family: 'Amatic SC', cursive;
   font-weight: bold;
+  color: rgb(104, 33, 33);
+  font-size: 1.2em;
+  border: 2px solid rgb(104, 33, 33);
+  margin: 30px auto;
   height: 30px;
   width: 100px;
 }
+.view-rates:hover{
+  filter: brightness(150%);
+}
 .new-rates{
   background-color: #F15E46;
-  border-radius: 10px;
+  border-radius: 30px;
   font-family: 'Amatic SC', cursive;
   font-weight: bold;
+  color: rgb(104, 33, 33);
+  font-size: 1.2em;
+  border: 2px solid rgb(104, 33, 33);
+  margin: 30px auto;
   height: 30px;
   width: 100px;
+}
+.new-rates:hover{
+  filter: brightness(150%);
 }
 /* ########################################################### */
 /* CREATE RATE */
@@ -160,9 +205,9 @@ form{
   height: 45px;
   font-family: 'Amatic SC', cursive;
   background-color: #F15E46;
-  border-radius: 15px;
-  padding: 5px;
+  border-radius: 30px;
   font-weight: bold;
+  border: 2px solid rgb(104, 33, 33);
   font-size: 0.5em;
   cursor: pointer;
 }
@@ -274,4 +319,9 @@ td{
   font-size: 1.5em;  
   color: rgb(104, 33, 33);
   text-align: center;
+ }
+/* ########################################################### */
+/* PARTIAL > RATE-CARD */
+ .btns-rateCard{
+   
  }
