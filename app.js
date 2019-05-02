@@ -54,4 +54,8 @@ app.use('/teacher', teacher);
 
 module.exports = app;
 
+// HBS - Partials
+
+
+
 app.listen(3000, () => console.log('use port: 3000'));
