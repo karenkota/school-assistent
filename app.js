@@ -7,20 +7,11 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const hbs = require('hbs');
 
-// Models
-const Student = require('./models/Student');
-const Teacher = require('./models/Teacher');
-const Subject = require('./models/Subject');
-const Rate = require('./models/Rate');
-
-const { errorMsg } = 'This user or password doesn\'t exist';
-const { successMsg } = 'Rate created';
-
 mongoose.connect('mongodb://localhost/school-assistent', { useNewUrlParser: true })
   .then(() => {
     console.log('Connected to Mongo!');
   }).catch((err) => {
-    console.error('Error connecting to mongo', err);
+    throw new Error(err);
   });
 
 const app = express();
@@ -49,108 +40,19 @@ app.use(cookieParser());
 app.set('view engine', 'hbs');
 app.set('views', `${__dirname}/views`);
 
-// Routes
-app.get('/', (req, res) => res.render('index'));
+const index = require('./routes/index');
 
-app.post('/', (req, res) => {
-  const { role, username, password } = req.body;
-  if (role === 'Student') {
-    Student.findOne({ username })
-      .then((student) => {
-        if (username === student.username && password === student.password) {
-          req.session.currentUser = student;
-          res.render('students', { student });
-        } else {
-          res.render('/', { errorMsg });
-        }
-      })
-      .catch(err => console.log(err));
-  } else if (role === 'Teacher') {
-    Teacher.findOne({ username })
-      .then((teacher) => {
-        if (username === teacher.username && password === teacher.password) {
-          req.session.currentUser = teacher;
-          Student.find()
-            .then((student) => {
-              Subject.find()
-                .then((subject) => {
-                  res.render('createRate', { teacher, student, subject });
-                })
-                .catch((err) => {
-                  console.log('Subject Coll Error', err);
-                });
-            })
-            .catch((err) => {
-              console.log('Student Coll Error', err);
-            });
-        } else {
-          res.render('index', { errorMsg });
-        }
-      })
-      .catch((err) => {
-        res.render('index', { errorMsg });
-        console.log(err);
-      });
-  }
-});
+app.use('/', index);
 
-app.use((req, res, next) => {
-  if (req.session.currentUser) {
-    next();
-  } else {
-    res.redirect('/');
-  }
-});
+const panel = require('./routes/auth/panel');
 
-app.post('/createRate/:teacherId', (req, res, next) => {
-  const { teacherId } = req.params;
-  const {
-    student,
-    subject,
-    exam,
-    rate,
-  } = req.body;
-  const rateDb = {
-    rate,
-    student,
-    teacher: teacherId,
-    subjects: subject,
-    exam,
-  };
-  const newRate = new Rate(rateDb);
-  newRate.save()
-    .then(() => {
-      res.redirect('/createRate', { successMsg });
-    })
-    .catch((err) => {
-      console.log('erro ao criar rate no db');
-    });
-});
+app.use('/panel', panel);
 
-app.get('/students', () => {
-  app.use((request, response) => {
-    if (request.session.currentUser.role === 'student') {
-      response.render('students');
-    } else {
-      response.redirect('/');
-    }
-  });
-});
 
-app.get('/teacher', () => {
-  app.use((request, response) => {
-    if (request.session.currentUser.role === 'teacher') {
-      response.render('teacher');
-    } else {
-      response.redirect('/');
-    }
-  });
-});
+const teacher = require('./routes/teacher/rates');
 
-app.get('/logout', (req, res) => {
-  req.session.destroy(() => {
-    res.redirect('/');
-  });
-});
+app.use('/teacher', teacher);
+
+module.exports = app;
 
 app.listen(3000, () => console.log('use port: 3000'));

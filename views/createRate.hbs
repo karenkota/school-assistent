@@ -1,8 +1,8 @@
 {{#if successMsg }}
-  <div class="Success-message">{{ successMsg }}</div>
+  <div class="success-message">{{ successMsg }}</div>
 {{/if}}
 <section id="create-rate">
-  <form action="/createRate/{{teacher._id}}" method="post" id="create-rate-form">
+  <form action="/teacher/createRate/{{teacher._id}}" method="post" id="create-rate-form">
     <label for="students">
       Estudant:
       <select name="student">
