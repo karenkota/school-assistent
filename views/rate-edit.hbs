@@ -1,32 +1,22 @@
-<section id="teacher-aplication">
-  <section id="teacher-card">
-  {{!-- {{#each}} --}}
-    <div>
-        <h3>{{teacher.name}}</h3>
-    </div>
-  {{!-- {{/each}} --}}
-  </section>
-  <section id="rate">
-    <section id="eachStudent">
-      {{#each student}}
-        <a href="/student/{{this.NAME}}">
-        <h3>{{==SUBJECT==}}</h3>
-        <div>
-          <figure><img src="{{this.avatarUrl}}" alt="photo {{this.name}}"></figure>
-        </div> 
-        <form action="/rate/{{rate._id}}/edit" method="post"></form>
-          <label for="">1st exam:</label>
-          <input type="number" min="0" max="10" name="rate" id="rate" value="{{rate.1stexam}}">
-
-          <label for="">2nd exam:</label>
-          <input type="number" min="0" max="10" name="rate" id="rate" value="{{rate.2ndexam}}">
-
-          <label for="">final exam:</label>
-          <input type="number" min="0" max="10" name="rate" id="rate" value="{{rate.finalexam}}">
-
-          <a class="btn del-rate" href="/student/{{student._id}}/delete">Delete</a>
-          <a class="btn edit-rate" href="/student/{{student._id}}/edit">Edit</a>
-        </form>
-      {{/each}}
-  </section>  
+<section id="Edit-rate">
+  <figure class="design"><img src="/images/logoEducation.png"></figure>
+  <form action="/teacher/{{rate._id}}/edit" method="post" id="edit-rate-form">
+    <label class="student" for="students">
+      Student:
+      <input type="text" name="student" id="student" value="{{this.student.name}}">
+    </label>
+    <label for="subject">
+      Subject:
+      <input type="text" name="subject" id="subject" value="{{this.subjects.name}}">      
+    </label>
+    <label for="exam">
+      Exam:
+      <input type="text" name="exam" id="exam" value="{{this.exam}}">      
+    </label>
+    <label for="rate">
+      Rate:
+      <input type="number" value='{{rate.rate}}' min="0" max="10" name="rate" id="rate">
+    </label>
+    <button class="send-btn" type="submit">Edit Rate</button>
+  </form>
 </section>

@@ -1,11 +1,14 @@
-  <div class="rate">
-    {{this.student.name}}
-    {{this.teacher.name}}
-    {{this.subjects.name}}
-    {{this.exam}}
-    {{this.rate}}
-  </div>
-  <div class="btns-rateCard">
-    <a href="/teacher/edit/{{this._id}}"><button>Edit Rate</button></a>
-    <a href="/teacher/delete/{{this._id}}"><button>Delete Rate</button></a>
-  </div>
+{{#if msg}}
+  <div class="msg">{{msg}}</div>
+{{/if}}
+<div class="rate">
+  {{this.student.name}}
+  {{this.teacher.name}}
+  {{this.subjects.name}}
+  {{this.exam}}
+  {{this.rate}}
+</div>
+<div class="btns-rateCard">
+  <a href="/teacher/{{this._id}}/edit"><button>Edit Rate</button></a>
+  <a href="/teacher/{{this._id}}/delete"><button>Delete Rate</button></a>
+</div>

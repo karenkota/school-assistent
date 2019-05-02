@@ -80,32 +80,30 @@ router.post('/createRate/:teacherId', (req, res) => {
     })
     .catch(err => console.log('Fail to create Rate in DB', err));
 });
-// ############################################
 
 
-router.get('/rate/:value/delete', (req, res, next) => {
-  Rate.findByIdAndDelete(req.params.value)
+router.get('/:rateId/delete', (req, res) => {
+  Rate.findByIdAndDelete(req.params.rateId)
     .then(() => {
-      res.redirect('/rate/?msg=rate+Removed');
+      res.redirect('/teacher/rate?msg=Rate+Removed');
     })
     .catch((err) => {
       throw new Error(err);
     });
 });
 
-router.get('/rate/:value/edit', (req, res, next) => {
-  Rate.findOne({ _id: req.params.value })
-    .then((result) => {
-      res.render('rate-edit', { rate: result });
+router.get('/:rateId/edit', (req, res) => {
+  Rate.findOne({ _id: req.params.rateId })
+    .then((rate) => {
+      res.render('rate-edit', { rate });
     })
     .catch((err) => {
       throw new Error(err);
     });
 });
 
-router.post('/rate/:value/edit', (req, res, next) => {
-  console.log(req.body);
-  Rate.findByIdAndUpdate(req.params.rate, { $set: req.body })
+router.post('/:rateId/edit', (req, res) => {
+  Rate.findByIdAndUpdate(req.params.rateId, { $set: req.body })
     .then(() => {
       res.redirect('/rate/?msg=rate+Updated');
     })
@@ -113,6 +111,5 @@ router.post('/rate/:value/edit', (req, res, next) => {
       throw new Error(err);
     });
 });
-
 
 module.exports = router;
