@@ -8,43 +8,32 @@
   <div id="container-main">
       <div class="col-auth">
         <form action="/" method="POST">
-          <div class="roles-box">
-            <input type="radio" name="role" value="Student" checked> Student<br>
-            <input type="radio" name="role" value="Teacher"> Teacher<br>
-          </div> 
-          <div class="label-box">
-            <label for="username">
-              User:
-              <input class="signInput" type="text" name="username" id="username">
-            </label>
-            <label for="password">
-              Password:
-              <input type="password" name="password" id="password">
-            </label>
-          </div>
-          <button class="signup-btn" type="submit">Sign In</button>
-          {{#if errorMsg }}
-            <div class="error-message">{{ errorMsg }}</div>
-          {{/if}}
+          <input type="radio" name="role" value="Student" checked> Student<br>
+          <input type="radio" name="role" value="Teacher"> Teacher<br>
+      </div>
+      <div class="label-box">
+        <label for="username">
+          User:
+          <input class="signInput" type="text" name="username" id="username">
+        </label>
+        <label for="password">
+          Password:
+          <input class="password" type="password" name="password" id="password">
+        </label>
+      </div>
+      <button class="signup-btn" type="submit">Sign In</button>
+      {{#if errorMsg }}
+      <div class="error-message">{{ errorMsg }}</div>
+      {{/if}}
         </form>
-    </div> 
+  </div> 
 </section>  
-
-{{!-- <section id="carroussel">
-  <div class="carroussel-img">
-    <figure><img src="/images/carroussel.jpg"  alt="school-images"></figure>
-  </div>
-  <div class="carroussel-img">
-    <figure><img src="/images/carroussel4.jpg"  alt="school-images"></figure>
-  </div>
-  <div class="carroussel-img">
-    <figure><img src="/images/carroussel3.jpg"  alt="school-images"></figure>
-  </div>
-  <div class="carroussel-img">
-    <figure><img src="/images/carroussel2.jpg" alt="school-images"></figure>
-  </div>
-</section> --}}
-
+<section id="image-mkt">
+  <figure><img src="/images/carroussel3.jpg" width="270px" height="180px" alt="school-images"></figure> 
+  <figure><img src="/images/carroussel4.jpg" width="270px" height="180px" alt="school-images"></figure>
+  <figure><img src="/images/carroussel.jpg" width="270px" height="180px"  alt="school-images"></figure>
+  <figure><img src="/images/carroussel2.jpg" width="270px" height="180px"  alt="school-images"></figure>
+</section>
 
 
 
