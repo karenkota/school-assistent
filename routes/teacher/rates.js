@@ -78,7 +78,9 @@ router.post('/createRate/:teacherId', (req, res) => {
     .then(() => {
       res.redirect('/teacher/rate');
     })
-    .catch(err => console.log('Fail to create Rate in DB', err));
+    .catch((err) => {
+      throw new Error(err);
+    });
 });
 
 
@@ -94,6 +96,9 @@ router.get('/:rateId/delete', (req, res) => {
 
 router.get('/:rateId/edit', (req, res) => {
   Rate.findOne({ _id: req.params.rateId })
+    .populate('student')
+    .populate('teacher')
+    .populate('subjects')
     .then((rate) => {
       res.render('rate-edit', { rate });
     })
@@ -103,9 +108,12 @@ router.get('/:rateId/edit', (req, res) => {
 });
 
 router.post('/:rateId/edit', (req, res) => {
-  Rate.findByIdAndUpdate(req.params.rateId, { $set: req.body })
+  const { rateId } = req.params;
+  const { exam, rate, student, subject, teacher } = req.body;
+  Rate.findByIdAndUpdate(rateId, { $set: { exam, rate } })
     .then(() => {
-      res.redirect('/rate/?msg=rate+Updated');
+      console.log('Rate Update');
+      res.redirect('/teacher/rate/?msg=rate+Updated');
     })
     .catch((err) => {
       throw new Error(err);
