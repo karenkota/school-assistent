@@ -1,4 +1,6 @@
 // server
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -7,7 +9,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const hbs = require('hbs');
 
-mongoose.connect('mongodb://localhost/school-assistent', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('Connected to Mongo!');
   }).catch((err) => {
