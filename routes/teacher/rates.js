@@ -109,10 +109,9 @@ router.get('/:rateId/edit', (req, res) => {
 
 router.post('/:rateId/edit', (req, res) => {
   const { rateId } = req.params;
-  const { exam, rate, student, subject, teacher } = req.body;
+  const { exam, rate } = req.body;
   Rate.findByIdAndUpdate(rateId, { $set: { exam, rate } })
     .then(() => {
-      console.log('Rate Update');
       res.redirect('/teacher/rate/?msg=rate+Updated');
     })
     .catch((err) => {

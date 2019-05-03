@@ -17,6 +17,9 @@ a:hover{
 button:hover{
   filter: brightness(150%);
 }
+body{
+  font-family: 'Amatic SC', cursive;
+}
 #header{
   position: absolute;
   top: 1px;
@@ -34,8 +37,8 @@ button:hover{
   width: 80px;
   height: 35px;
 }
-body{
-  font-family: 'Amatic SC', cursive;
+.clear-fix{
+  clear: both;
 }
 /* INDEX VIEW */
 #home-auth{
@@ -151,6 +154,7 @@ form{
   margin: 30px auto;
   height: 30px;
   width: 100px;
+  text-transform: uppercase;
 }
 .new-rates:hover{
   filter: brightness(150%);
@@ -393,7 +397,52 @@ td{
   margin-top: 20px;
  }
 /* ########################################################### */
+/* EDIT RATE */
+.container{
+  width: fit-content;
+  margin: 0 auto;
+}
+#edit-rate-form{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 2em;
+}
 
+#edit-rate-form div,
+#edit-rate-form label{
+  margin: 5px 0;
+  color: #F15E46;
+}
+
+#edit-rate-form div span,
+#edit-rate-form label input{
+  color: #333;
+  margin-left: 15px;
+}
+#edit-rate-form label input{
+  font-family: 'Amatic SC', cursive;
+  border-radius: 10px;
+  margin: 10px 0 10px 20px;
+  background-color: #006572;
+  color: #7ACDD1;
+  font-size: .6em;
+  font-weight: 600;
+  text-align: center;
+  height: 35px;
+  width: 150px;
+}
+#edit-rate-form .exam-choice{
+  color: #333;
+  font-size: .7em;
+}
+
+#edit-rate-form .send-btn{
+  background-color: #54b538;
+  font-size: .8em;
+  align-self: center;
+}
 
 @media(max-width: 360px) {
   

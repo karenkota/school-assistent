@@ -1,17 +1,22 @@
-<section id="Edit-rate">
-  <figure class="design-edit"><img src="/images/logoEducation.png"></figure>
-  <form action="/teacher/{{rate._id}}/edit" method="post" id="edit-rate-form">
-    <div>Student: <span>{{rate.student.name}}></span></div>
-    <div>Teacher: <span>{{rate.teacher.name}}</span></div>
-    <div>Subject: <span>{{rate.subjects.name}}</span></div>
-    <label for="exam">
-      Exam:
-      <input type="text" name="exam" id="exam" value="{{rate.exam}}">
-    </label>
-    <label for="rate">
-      Rate:
-      <input type="number" value='{{rate.rate}}' min="0" max="10" name="rate" id="rate">
-    </label>
-    <button class="send-btn" type="submit">Edit Rate</button>
-  </form>
+<section id="edit-rate">
+  <figure class="design-edit">
+    <img src="/images/logoEducation.png">
+  </figure>
+  <div class="container">
+    <form action="/teacher/{{rate._id}}/edit" method="post" id="edit-rate-form">
+      <div>Student: <span>{{rate.student.name}}</span></div>
+      <div>Teacher: <span>{{rate.teacher.name}}</span></div>
+      <div>Subject: <span>{{rate.subjects.name}}</span></div>
+      <label for="exam">
+        Exam:
+        <input type="text" name="exam" id="exam" value="{{rate.exam}}">
+        <span class="exam-choice">[1stexam, 2ndexam or finalexam]</span>
+      </label>
+      <label for="rate-edit">
+        Rate:
+        <input type="number" value='{{rate.rate}}' min="0" max="10" name="rate" id="rate-edit">
+      </label>
+      <button class="send-btn" type="submit">Edit Rate</button>
+    </form>
+  </div>
 </section>
