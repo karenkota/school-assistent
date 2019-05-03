@@ -4,7 +4,12 @@
       <h2>Hello 
         <span>{{teacher.name}}</span>
       </h2>
-  </div>     
+  </div>
+  <div class="new-rates pc-hidden">
+    <a href="/teacher/addRate/{{teacher._id}}">
+    <h4>New Rates</h4>
+    </a>
+  </div>
   <div class="students-rates">
     {{#if msg}}
       <div class="msg">{{msg}}</div>
@@ -14,7 +19,7 @@
     {{/each}}
   </div>
   <div class="clear-fix"></div>
-  <div class="new-rates">
+  <div class="new-rates mobile-hidden">
     <a href="/teacher/addRate/{{teacher._id}}">
     <h4>New Rates</h4>
     </a>

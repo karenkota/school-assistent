@@ -9,8 +9,14 @@
       <div class="col-auth">
         <form action="/panel" method="POST">
           <div class="roles-box">
-            <input type="radio" name="role" value="student" checked> Student<br>
-            <input type="radio" name="role" value="teacher"> Teacher<br>
+            <label class="container">Student
+              <input type="radio" checked="checked" name="role" value="student">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Teacher
+              <input type="radio" name="role" value="teacher">
+              <span class="checkmark"></span>
+            </label>
           </div> 
           <div class="label-box">
             <label for="username">
