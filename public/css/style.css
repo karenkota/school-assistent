@@ -47,17 +47,13 @@ body{
   font-size: 40px;
   color: rgb(104, 33, 33);
   text-align: center;
+  padding-bottom: 20px;
 }
 .top-header{
   padding-bottom: 20px;
 }
 .img-index{
   margin-top:15px;
-}
-#container-main{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
 }
 form{
   display: flex;
@@ -66,7 +62,6 @@ form{
 .roles-box{
   text-align: center;
   width: 200px;
- 
 }
 .label-box{
   text-align: center;
@@ -445,23 +440,23 @@ td{
 }
 
 @media(max-width: 360px) {
-  #container-main{
-    display: flex;
-    align-self: auto;
-    width: 350px;
-  }
-  .form{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .roles-box .label-box .signup-btn{
+  #home-auth{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 300px;
+    align-content: space-evenly;
+    height: 100vh;
+    background-color: #7ACDD1;
+    font-size: x-large;
+    color: rgb(104, 33, 33);
+    text-align: center;
   }
-  .signup-btn{
-   display: none;
+  #container-main{
+    display: flex;
+    align-self: auto;
+    flex-wrap: wrap;
+  }
+  #image-mkt{
+    display:none;
   }
 }
