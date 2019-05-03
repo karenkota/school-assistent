@@ -8,44 +8,44 @@ mongoose.connect(`mongodb://localhost/${dbtitle}`, { useNewUrlParser: true });
 
 const students = [
   {
-    name: 'Henrique Mendes',
-    username: 'henriquinho',
-    password: '1234',
-    role: 'student',
+    name: "Henrique Mendes",
+    username: "henriquinho",
+    password: "1234",
+    role: "student",
   },
   {
-    name: 'Guilherme Davi',
-    username: 'guionfire',
-    password: '1234',
-    role: 'student',
+    name: "Guilherme Davi",
+    username: "guionfire",
+    password: "1234",
+    role: "student",
 
   },
   {
-    name: 'Mia Taniguchi',
-    username: 'miau',
-    password: '1234',
-    role: 'student',
+    name: "Mia Taniguchi",
+    username: "miau",
+    password: "1234",
+    role: "student",
   },
 ];
 
 const teachers = [
   {
-    name: 'Rodrigo Leme',
-    username: 'lemerodrigo',
-    password: 'tudopode',
-    role: 'teacher',
+    "name": "Rodrigo Leme",
+    "username": "lemerodrigo",
+    "password": "tudopode",
+    "role": "teacher"
   },
 ];
 
 const subjects = [
   {
-    name: 'Math',
+    "name": "Math"
   },
   {
-    name: 'Science',
+    "name": "Science"
   },
   {
-    name: 'Grammar'
+    "name": "Grammar"
   },
 ]
 
