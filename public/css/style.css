@@ -445,5 +445,23 @@ td{
 }
 
 @media(max-width: 360px) {
-  
+  #container-main{
+    display: flex;
+    align-self: auto;
+    width: 350px;
+  }
+  .form{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .roles-box .label-box .signup-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+  }
+  .signup-btn{
+   display: none;
+  }
 }
