@@ -47,17 +47,13 @@ body{
   font-size: 40px;
   color: rgb(104, 33, 33);
   text-align: center;
+  padding-bottom: 20px;
 }
 .top-header{
   padding-bottom: 20px;
 }
 .img-index{
   margin-top:15px;
-}
-#container-main{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
 }
 form{
   display: flex;
@@ -66,7 +62,6 @@ form{
 .roles-box{
   text-align: center;
   width: 200px;
- 
 }
 .label-box{
   text-align: center;
@@ -312,7 +307,21 @@ form{
   font-family: 'Amatic SC', cursive;
   font-weight: bold;
   font-size: 0.5em;
-  color:#F15E46;;
+  color:#F15E46;
+}
+#container-StudentsView{
+  border: 7px solid rgb(20, 180, 54);
+}
+#eachStudent{
+  display: flex;
+  color: rgb(0, 101, 114);
+  font-weight: bold;
+  font-size: 1em;
+  margin: 100px 20px 20px 20px;
+}
+#eachStudent h1{
+  font-size: 2em;
+  color:#F15E46;
 }
 #studentsRate{
   height: 100vh;
@@ -328,6 +337,9 @@ form{
   display: flex;
   flex-wrap: row;
 }
+.rate.title{
+  margin: 120px 0 0 -30px;
+}
 .menu{
   color: #1C2141;
 }
@@ -342,8 +354,9 @@ td{
 }
 .rates{
   padding: 15px 20px;
-  border: 1px solid black;
+  border: 7px solid rgb(248, 191, 3);
   background-color: whitesmoke;
+
 }
 .rates-titles{
   color: rgb(248, 191, 3);
@@ -353,7 +366,7 @@ td{
   border-bottom: 2px solid rgb(248, 191, 3);
 }
 #news{
-  border: 7px solid rgb(248, 191, 3);
+  border: 7px solid #F15E46;
   padding: 10px;
   margin: 20px 20px;
 }
@@ -376,7 +389,7 @@ td{
   display: flex;
   align-content: center;
   justify-content: space-evenly;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 .activites{
   margin: 20px 40px;
@@ -386,7 +399,7 @@ td{
   align-content: center;
 }
 .courses{
-  font-size: 1.5em;  
+  font-size: 1.2em;  
   margin-top: 50px;
   color: #1C2141;
 }
@@ -445,23 +458,46 @@ td{
 }
 
 @media(max-width: 360px) {
-  #container-main{
-    display: flex;
-    align-self: auto;
-    width: 350px;
-  }
-  .form{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .roles-box .label-box .signup-btn{
+  #home-auth{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 300px;
+    align-content: space-evenly;
+    height: 100vh;
+    background-color: #7ACDD1;
+    font-size: x-large;
+    color: rgb(104, 33, 33);
+    text-align: center;
   }
-  .signup-btn{
-   display: none;
+  #container-main{
+    display: flex;
+    align-self: auto;
+    flex-wrap: wrap;
+  }
+  #image-mkt{
+    display:none;
+  }
+  /* PANEL TEACHER */
+  #teacher-aplication{
+    display:flex;
+    margin-top: -100px;
+    height: 150px;
+  }
+  .students-rates{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #7ACDD1;
+    border: 1px solid #F15E46;
+    width: 350px;
+    text-align: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .rate{
+    width: 350px;
+  }
+  #rate-card{
+
   }
 }
